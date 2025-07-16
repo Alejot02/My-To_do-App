@@ -1,0 +1,11 @@
+<div id="content">
+    <form method="POST"
+        hx-post="{% url 'delete_task' task.id %}"
+        hx-target="#tasks-container">
+        {% csrf_token %}
+        <h3>This is what you're deleting:</h3>
+        <p>{{task.title}} | {{task.deadline|date:"m/Y"}}</p>
+        <button class="close" type="button" onclick="delete_modal.close()">Close</button>
+        <button class="save" type="submit" onclick="delete_modal.close()">Delete</button>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="search-add">
+    <input id="search-input" class="filter-input" type="text" name="q" placeholder="Filter your tasks..." autocomplete="off"
+        hx-get="{% url 'search_tasks' %}"
+        hx-trigger="keyup delay:300ms"
+        hx-target="#tasks-container">
+    
+    <button class="add-button" onclick="add_task_modal.showModal()">Add new Task</button>
+    {% include 'tasks/add_task_modal.html' %}
+</section>
+
+<section class="task-section">
+    <div id="tasks-container">
+        {% include 'tasks/task-section.html' %}
+    </div>
+</section>
+
+{% endblock content %}

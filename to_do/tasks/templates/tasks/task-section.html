@@ -1,0 +1,22 @@
+{% load static %}
+<div id="show_button">
+    <a hx-get="{% url 'view_completed' %}"
+    hx-target="#tasks-container">
+        <button id="showing-button">{{show_button}}</button>
+    </a>
+</div>
+{% if tasks %}
+<dialog id="delete_modal"></dialog>
+<dialog id="update_modal"></dialog>
+{% for task in tasks %}
+    <div id="task-item{{task.id}}" class="task-item {% if not forloop.last %}task-item-border-bottom{% endif %}{% if forloop.first %} task-item-top-rounded{% elif forloop.last %}task-item-bottom-rounded{% endif %}">
+        {% include 'tasks/task-item.html' %}    
+    </div>
+{% endfor %}
+
+{% else %}
+
+<div class="no-item">
+    <p>There are no tasks that match this criteria</p>
+</div>
+{% endif %}

@@ -1,0 +1,19 @@
+{% load static %}
+<a class="selector" 
+    hx-get="{% url 'task_completed' task.id %}"
+    hx-target="#task-item{{task.id}}">
+    {% if task.is_completed %}
+    <img class="task-completed" src="{% static 'images/checked-circle.svg' %}" alt="empty-circle">
+    {% else %}
+    <img src="{% static 'images/empty-circle.svg' %}" alt="empty-circle">
+    {% endif %}
+</a>
+<p>{{task.title}} | {{task.deadline|date:"d/M/Y"}}</p>
+<a hx-get="{% url 'update_task' task.id %}"
+    hx-target="#update_modal">
+    <button class="edit-icon" onclick="update_modal.showModal()"><img src="{% static 'images/edit-icon.svg' %}" alt="edit-icon"></button>
+</a>
+<a hx-get="{% url 'delete_task' task.id %}"
+    hx-target="#delete_modal">
+    <button class="delete-icon" onclick="delete_modal.showModal()"><img src="{% static 'images/delete-icon.svg' %}" alt="edit-icon"></button>
+</a>
