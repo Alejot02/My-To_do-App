@@ -1,5 +1,29 @@
 I created a To-Do app Using Django and HTMX, you'll be able to add, update, filter and delete your tasks without having to reload your page even once!
 
+<img width="1013" height="900" alt="image" src="https://github.com/user-attachments/assets/3d841b67-4d26-4947-bfb8-592053ff99b6" />
+
+Adding a new task:
+
+<img width="1078" height="946" alt="image" src="https://github.com/user-attachments/assets/a492f5bd-55b8-4e9d-a5e2-1e40225b5cba" />
+
+Updating a task:
+
+<img width="935" height="855" alt="image" src="https://github.com/user-attachments/assets/d93e3a05-e75a-40a3-9d90-987610ca07e0" />
+<img width="942" height="968" alt="image" src="https://github.com/user-attachments/assets/7879c05f-5145-4ba5-b043-0597f7184876" />
+
+Deleting a task:
+
+<img width="999" height="841" alt="image" src="https://github.com/user-attachments/assets/e0ced57f-2f49-40fe-b556-6ebb83467c73" />
+
+You can mark your tasks as "completed", you can choose to see all of them, or just the ones that are completed by clicking "View comlpleted".
+
+<img width="910" height="842" alt="image" src="https://github.com/user-attachments/assets/f4ab3d42-46a1-494e-ae04-3c7722e73506" />
+<img width="1004" height="700" alt="image" src="https://github.com/user-attachments/assets/e974f0f2-8d19-45f5-be39-fa8e6de89f2d" />
+
+
+
+
+
 -----------------------MY EXPERIENCE WITH THIS PROJECT:-----------------------
 
 Note that this is the first project I did on my own. I proactively avoided tutorials, but instead searched through online documentation anytime I had a specific question. The best example was when I wanted to use the information of an object to pre-populate my html form. I remember trying to pre-populate the "date" field using syntax like "{{form.deadline.value}}" without knowing that the input type datetime expects data to arrive in a certain format. Turns out the correct way to do it was by having the "value" of the input be: {{form.deadline.value|date:'Y-m-d\Th:m:s'}}.
